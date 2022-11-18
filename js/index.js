@@ -157,7 +157,39 @@ function renderButtons() {
 }
 
 function renderPrice() {
-  // Iteration 4: change the HTML of `<aside class="panel price">`
+  let valuePrice = 10;
+  let arrList = document.querySelector('.price').getElementsByTagName('li');
+  if (state.pepperoni) {
+    arrList[0].style.display = 'block';
+    valuePrice += 1;
+  } else {
+    arrList[0].style.display = 'none';
+  }
+  if (state.mushrooms) {
+    arrList[1].style.display = 'block';
+    valuePrice += 1;
+  } else {
+    arrList[1].style.display = 'none';
+  }
+  if (state.greenPeppers) {
+    arrList[2].style.display = 'block';
+    valuePrice += 1;
+  } else {
+    arrList[2].style.display = 'none';
+  }
+  if (state.whiteSauce) {
+    arrList[3].style.display = 'block';
+    valuePrice += 3;
+  } else {
+    arrList[3].style.display = 'none';
+  }
+  if (state.glutenFreeCrust) {
+    arrList[4].style.display = 'block';
+    valuePrice += 5;
+  } else {
+    arrList[4].style.display = 'none';
+  }
+  document.getElementsByTagName('strong')[0].innerHTML = `$${valuePrice}`;
 }
 
 renderEverything();
